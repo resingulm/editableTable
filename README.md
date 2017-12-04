@@ -1,5 +1,7 @@
 # EditableTable
 
+This is a simple example how to build an editable table with Angular 5. For some styling Bootstrap was used.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.
 
 ## Development server
