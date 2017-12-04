@@ -9,16 +9,24 @@
       <td *ngIf="user.id === editRowId">
         <input type="text" [(ngModel)]="user.firstName">
       </td>
-      <td *ngIf="user.id !== editRowId" (click)="Edit(user.id)">{{user.firstName}}</td>
+      <td *ngIf="user.id !== editRowId" (click)="onEdit(user.id)">{{user.firstName}}</td>
       <td *ngIf="user.id === editRowId">
         <input type="text" [(ngModel)]="user.lastName">
       </td>
-      <td *ngIf="user.id !== editRowId" (click)="Edit(user.id)">{{user.lastName}}</td>
+      <td *ngIf="user.id !== editRowId" (click)="onEdit(user.id)">{{user.lastName}}</td>
       <td *ngIf="user.id === editRowId">
         <input type="text" [(ngModel)]="user.eMail">
       </td>
-      <td *ngIf="user.id !== editRowId" (click)="Edit(user.id)">{{user.eMail}}</td>
+      <td *ngIf="user.id !== editRowId" (click)="onEdit(user.id)">{{user.eMail}}</td>
     </tr>
   </tbody>
 </table>
-<button type="button" class="btn btn-primary">Print</button>
+<div>
+  <h4>List of users</h4>
+    <ul class="list-group">
+        <tr *ngFor="let user of userData">
+          <li class="list-group-item">{{user.firstName}} {{user.lastName}} {{user.eMail}}</li>
+        </tr>
+      </ul>
+</div>
+<button type="button" class="btn btn-primary"(click)="onPrint()">Print to console</button>

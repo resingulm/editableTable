@@ -20,8 +20,12 @@ export class UserTableComponent implements OnInit {
   ngOnInit() {
   }
 
-  Edit(rowId : number) {
+  onEdit(rowId : number) {
     this.editRowId = rowId;
+  }
+
+  onPrint() {
+    console.log(JSON.stringify(this.userData));
   }
 
 }
