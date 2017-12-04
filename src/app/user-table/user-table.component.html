@@ -1,3 +1,24 @@
-<p>
-  user-table works!
-</p>
+<table class="table">
+  <thead>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userData">
+      <td *ngIf="user.id === editRowId">
+        <input type="text" [(ngModel)]="user.firstName">
+      </td>
+      <td *ngIf="user.id !== editRowId" (click)="Edit(user.id)">{{user.firstName}}</td>
+      <td *ngIf="user.id === editRowId">
+        <input type="text" [(ngModel)]="user.lastName">
+      </td>
+      <td *ngIf="user.id !== editRowId" (click)="Edit(user.id)">{{user.lastName}}</td>
+      <td *ngIf="user.id === editRowId">
+        <input type="text" [(ngModel)]="user.eMail">
+      </td>
+      <td *ngIf="user.id !== editRowId" (click)="Edit(user.id)">{{user.eMail}}</td>
+    </tr>
+  </tbody>
+</table>
+<button type="button" class="btn btn-primary">Print</button>
